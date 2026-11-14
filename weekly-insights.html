@@ -10,7 +10,10 @@
 :root[data-theme="dark"]{--bg:#0f1319;--panel:#171c24;--ink:#e6e9ef;--mute:#8d97a8;--line:#2a313c;--accent:#6d9bff;--up:#3ecf9a;--down:#ff7a70;--chip:#222936;--chipOn:#6d9bff;--chipOnInk:#0f1319;--soft:#1b2433}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-.page{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+.page{width:100%;max-width:2200px;margin:0 auto;padding:20px clamp(14px,2.5vw,40px) 60px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:20px;align-items:start}
+.cols .card{margin-bottom:0}
+.top{position:sticky;top:0;z-index:5}
 h1{font-size:20px;margin:0 0 2px}
 .sub{color:var(--mute);font-size:13px;margin-bottom:16px}
 .top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:18px;font-size:14px}
@@ -61,6 +64,7 @@ details{margin-top:14px}summary{cursor:pointer;color:var(--accent);font-size:13.
     <button class="link" id="themeBtn">Theme</button>
   </div>
 
+  <div class="cols">
   <!-- SECTION 1 -->
   <div class="card">
     <h2>1 · Friday setup → how next week behaves</h2>
@@ -79,6 +83,7 @@ details{margin-top:14px}summary{cursor:pointer;color:var(--accent);font-size:13.
     <button class="primary" id="addStep">+ Add condition</button>
     <button class="link" id="clearSteps">Clear all</button>
     <div id="s2out"></div>
+  </div>
   </div>
 </div>
 
